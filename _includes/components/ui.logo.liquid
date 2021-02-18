@@ -1,0 +1,10 @@
+<li class="col-2 col-home">
+	<a href="{{ LANG_BASEURL | prepend: site.url }}">
+		<h1>
+			{{ BRAND_FNAME | truncate: 1, ''}}<span class="show-on-hover">{{ BRAND_FNAME | slice: 1, BRAND_FNAME.size
+				}}</span>,
+			{{ BRAND_SNAME | truncate: 1, ''}}<span class="show-on-hover">{{ BRAND_SNAME | slice: 1, BRAND_SNAME.size
+				}}</span>
+		</h1>
+	</a>
+</li>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1441" height="900" viewBox="0 0 1441 900">
+  <defs>
+    <clipPath id="clip-Desktop_1.1_Home_">
+      <rect width="1441" height="900"/>
+    </clipPath>
+  </defs>
+  <g id="Desktop_1.1_Home_" data-name="Desktop [ 1.1 Home ]" clip-path="url(#clip-Desktop_1.1_Home_)">
+    <rect width="1441" height="900" fill="#fff"/>
+    <g id="Home_Hero_-_Introl" data-name="Home / Hero - Introl">
+      <text id="Unknown_Unbranded" data-name="Unknown,
+Unbranded" transform="translate(29 102)" font-size="96" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300" letter-spacing="-0.002em"><tspan x="0" y="0">Unknown,</tspan><tspan x="0" y="96">Unbranded</tspan></text>
+      <text id="website_1440_900_px_2020.12.31_23:59_Peking_China" data-name="website,
+1440 × 900 px,
+2020.12.31,
+23:59
+Peking, China" transform="translate(29 338)" font-size="96" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300"><tspan x="0" y="0">website,</tspan><tspan x="0" y="94">1440 × 900 px,</tspan><tspan x="0" y="188">2020.12.31,</tspan><tspan x="0" y="282">23:59</tspan><tspan x="0" y="376">Peking, China</tspan></text>
+    </g>
+    <g id="Header">
+      <g id="Bg">
+        <rect id="frame" width="1369" height="36" transform="translate(36 832)" fill="#fff"/>
+      </g>
+      <g id="Languages">
+        <g id="English" transform="translate(1286 854)">
+          <text id="English-2" data-name="English" transform="translate(0 10)" font-size="12" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300"><tspan x="0" y="0">English</tspan></text>
+        </g>
+        <text id="_" data-name="/" transform="translate(1328 864)" font-size="12" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300"><tspan x="0" y="0">/</tspan></text>
+        <g id="Français" transform="translate(1335 854)">
+          <text id="Français-2" data-name="Français" transform="translate(0 10)" font-size="12" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300"><tspan x="0" y="0">Français</tspan></text>
+        </g>
+      </g>
+      <g id="Nav">
+        <g id="索引" transform="translate(786 851)">
+          <text id="索引-2" data-name="索引" transform="translate(0 14)" font-size="12" font-family="NotoSansSC-Light, Noto Sans SC" font-weight="300"><tspan x="0" y="0">索引</tspan></text>
+        </g>
+        <g id="关于我们" transform="translate(536 851)">
+          <text id="关于我们-2" data-name="关于我们" transform="translate(0 14)" font-size="12" font-family="NotoSansSC-Light, Noto Sans SC" font-weight="300"><tspan x="0" y="0">关于我们</tspan></text>
+        </g>
+        <g id="作品" transform="translate(286 851)">
+          <text id="作品-2" data-name="作品" transform="translate(0 14)" font-size="12" font-family="NotoSansSC-Light, Noto Sans SC" font-weight="300"><tspan x="0" y="0">作品</tspan></text>
+        </g>
+      </g>
+      <g id="Logo" transform="translate(36 854)">
+        <text id="Unknown_Unbranded-2" data-name="Unknown, Unbranded" transform="translate(0 10)" font-size="12" font-family="SctoGroteskA-Light, Scto Grotesk A" font-weight="300"><tspan x="0" y="0">Unknown, Unbranded</tspan></text>
+        <path id="mask" d="M57,12V0h54V12ZM0,12V0H42V12Z" transform="translate(8)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

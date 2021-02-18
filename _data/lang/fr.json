@@ -1,0 +1,77 @@
+{
+	"title": "Unknow, Unbranded",
+	"lang": "fr-FR",
+	"description": "Unknown, Unbranded est un bureau de création établi à Pékin offrant une expertise dans les produits numériques et travaillant principalement sur la stratégie produit, l'image de marque, l'interface utilisateur et l'espace.",
+	"update": "2020-12-30T10:20:00Z",
+	"ui": {
+		"nav": [
+			{
+				"id": "work",
+				"title": "Projets",
+				"route": "/projets"
+			},
+			{
+				"id": "about",
+				"title": "À propos",
+				"route": "/a-propos"
+			},
+			{
+				"id": "index",
+				"title": "Index",
+				"route": "/index"
+			}
+		],
+		"table_header": {
+			"project": "Projet",
+			"index": "N°",
+			"client": "Client",
+			"type": "Type",
+			"year": "Année",
+			"country": "Pays",
+			"status": "Statut"
+		},
+		"contact": "Nous contacter",
+		"copyright": "Tous droits réservés"
+	},
+	"info": {
+		"about": "<p>Unknown, Unbranded est un bureau de création créé en 2020 à Pékin offrant une expertise dans les produits et espaces numériques. À l'avenir, Unknown, Unbranded envisage davantage de collaborations avec des esprits créatifs de premier plan issus de domaines multidisciplinaires, tels que des photographes, des designers UX, des architectes, des créateurs de contenu, des stratèges et les gens de la technologie. Inconnu, Unbranded aime jouer avec la tension entre la forme, la matérialité de l'objet et des sujets rationnels tels que les changements dans les sociétés ou les technologies de pointe. Inconnu, Unbranded travaille avec ses clients de l'intention originale jusqu'à ce qu'il atteigne l'utilisateur final, offrant un large éventail de services dans le développement de produits, la stratégie de conception et la direction artistique. Inconnu, Unbranded est construit autour d'une pratique créative basée sur l'étude et la compréhension des archétypes, aboutissant à une production discrète singulière. Inconnu, Unbranded initie des projets de son propre chef à côté d'œuvres pour des clients en différents pays comme la France, le Japon et les Pays-Bas.</p>",
+		"contact": {
+			"email": "biz@uuoffice.cc",
+			"tel": {
+				"zone":"+86",
+				"number":"15.11.000.40.23"
+			},
+			"address": {
+				"detail": "Bureau Virtuel<br>Travailler à Distance",
+				"location": ""
+			},
+			"social": [
+				{
+					"item": "instagram",
+					"title": "Instagram",
+					"link": ""
+				},
+				{
+					"item": "linkdedin",
+					"title": "LinkedIn",
+					"link": ""
+				},
+				{
+					"item": "github",
+					"title": "Github",
+					"link": ""
+				},
+				{
+					"item": "behance",
+					"title": "Behance",
+					"link": ""
+				},
+				{
+					"item": "skype",
+					"title": "Skype",
+					"link": "skype:live:.cid.e520d70ae7c90141?chat"
+				}
+			]
+		}
+	}
+}

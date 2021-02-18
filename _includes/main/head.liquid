@@ -1,0 +1,58 @@
+<!-- Init tags -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Main tags -->
+<title>{{ PAGE_TITLE }}</title>
+<meta name="description" content="{{ PAGE_DESCRIPTION }}">
+<meta name="keywords" content="{{ PAGE_KEYWORDS }}">
+<meta name="author" content="{{ site.author.name }}">
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="{{ PAGE_URL }}">
+
+<!-- Social tags -->
+<meta property="og:locale" content="{{ PAGE_LANG | replace: '-', '_' }}" />
+<meta property="og:type" content="{{ PAGE_TYPE }}">
+<meta property="og:title" content="{{ PAGE_TITLE }}">
+<meta property="og:description" content="{{ PAGE_DESCRIPTION }}">
+<meta property="og:url" content="{{ PAGE_URL }}">
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:image" content="{{ "/public/assets/social/weareuu-social.svg" | prepend: site.url }}" />
+<meta property="og:image:width" content="1441" />
+<meta property="og:image:height" content="900" />
+<meta property="article:modified_time" content="{{ PAGE_MODIFIDATE }}" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ PAGE_TITLE }}" />
+<meta name="twitter:description" content="{{ PAGE_DESCRIPTION }}" />
+
+<script type="application/ld+json" class="yoast-schema-graph">
+{% include utils/seo.schema.graph.json %}
+</script>
+
+{% include components/seo.webmaster.verification.liquid %}
+
+<!-- Favicon -->
+<meta name="theme-color" content="#ffffff">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/public/assets/favicon/apple-touch-icon.png' | prepend: site.url }}">
+<link rel="icon" type="image/png" href="{{ '/public/assets/favicon/favicon-32x32.png' | prepend: site.url }}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ '/public/assets/favicon/favicon-16x16.png' | prepend: site.url }}" sizes="16x16">
+<link rel="manifest" href="{{ '/public/assets/favicon/manifest.json' | prepend: site.url }}">
+<link rel="mask-icon" href="{{ '/public/assets/favicon/safari-pinned-tab.svg' | prepend: site.url }}" color="#666666 ">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+
+<!-- CSS links -->
+<link href="{{ '/public/assets/dist/styles.min.css?v=' | append: VERSION | relatvie_url }}" rel="stylesheet">
+{% feed_meta %}
+{% if page.type == "home" %}
+	{% include components/ui.home.header.liquid %}
+{% endif %}
+{%- if jekyll.environment == "production" -%}
+	{% include externals/google_analytics.liquid %}
+{%- endif -%}

@@ -1,0 +1,123 @@
+{%- include utils/global.liquid -%}
+
+{%- for media in project.media -%}
+	{%- assign mediaCounter = mediaCounter | plus: 1 -%}
+{%- endfor -%}
+{%- if prIndex < 10 -%}
+		{%- assign project_index = prIndex | prepend: '0' -%}
+	{%- else -%}
+		{%- assign project_index = prIndex -%}
+{%- endif -%}
+<a class="link-overlay" href="{{ project.title | prepend: PROJECT_URL }}">{{ project.project }}</a>
+<div class="project-line secondary-header">
+	<a class="project-line-link placeholder-shown" href="{{ project.title | prepend: PROJECT_URL }}"
+		data-uid="{{ project.title }}">
+
+		<div class="col-2 project-id" data-sort="id" data-value="{{ project.project }}">
+			<div class="resizable">
+				{% include components/ui.brand.logo.liquid %}
+				<div class="id">{{ project.project }}</div>
+			</div>
+		</div>
+
+		<div class="mobile-only project-only index">
+			<span class="current">1</span> — {{  mediaCounter }}
+		</div>
+		<div class="col-2 project-index color-landscape" data-sort="index" data-value="{{ project_index }}">
+			<span class="resizable">{{ project_index }}</span>
+		</div>
+
+		{%- assign color_on_hover = project.page_color | append: '-on-hover' %}
+		{%- assign color_in_show = project.page_color -%}
+		<div class="col-2 project-client color-portrait {{ color_in_show }} {{ color_on_hover }}" data-sort="client"
+			data-value="{{ project.client }}">
+			<h3 class="resizable">{{ project.client }}</h3>
+		</div>
+		<div class="col-2 project-year color-portrait {{ color_in_show }} {{ color_on_hover }}" data-sort="year"
+			data-value="{{ project.year }}">
+			<span class="resizable">{{ project.year }}</span>
+		</div>
+		<div class="col-2 project-country color-landscape" data-sort="country" data-value="{{ project.country }}">
+			<span class="resizable">{{ project.country }}</span>
+		</div>
+		<div class="col-1 project-status" data-sort="status" data-value="{{ project.status }}">
+			<span class="resizable">{{ project.status }}</span>
+		</div>
+
+		<div class="mobile-only mobile-cover">
+			<div class="image">
+				{% if project.media[0].type == 'image' %}
+				<img class="lazyload" src="{{ LAZY_GIF }}"
+					data-src="{{ project.media[0].source.data_src | prepend: MEDIA_URL }}" 
+					data-srcset="{{ project.media[0].source.data_srcset.low | prepend: MEDIA_URL | append: ' 600w' }}, 
+								{{ project.media[0].source.data_srcset.medium | prepend: MEDIA_URL | append: ' 1000w' }}, 
+								{{ project.media[0].source.data_srcset.high | prepend: MEDIA_URL | append: ' 2000w' }}" 
+					data-sizes="auto" alt="{{ project.media[0].filename }}">
+				{% else if project.media[0].type == 'video' %}
+				<video autoplay="" muted="" playsinline="" loop="">
+					<source src="{{ project.media[0].source.src | prepend: MEDIA_URL }}" type="video/mp4">
+				</video>
+				{% endif %}
+			</div>
+		</div>
+	</a>
+</div>
+
+<div class="project-text open">
+	<div class="project-text-trigger">
+		<span>Info [+]</span>
+		<span>{{ project.project }}</span>
+	</div>
+	<div class="project-text-inner">
+		{{ project.info }}
+	</div>
+	<div class="project-text-index">
+		<span class="current">1</span> — {{  mediaCounter }}
+	</div>
+</div>
+
+<div class="slides-container">
+	<div class="slides-padding">
+		<div class="slides-inner swiper-container no-swiping-desktop">
+
+			{%- include components/ui.slide.arrows.liquid -%}
+
+			<div class="index">
+				<span class="current">1</span> — {{  mediaCounter }}
+			</div>
+
+			<div class="slides swiper-wrapper" data-count="{{  mediaCounter }}">
+
+				{%- for media in project.media -%}
+				<div class="slide swiper-slide {% unless forloop.first %}hidden{% endunless %} {{ media.mode }}"
+					data-filename="{{ media.filename }}" data-white="{{ media.data_white }}">
+					<div class="slide-inner {{ media.mode }}">
+
+						<a class="link-overlay" href="{{ project.title | prepend: PROJECT_URL }}">{{ project.project }}</a>
+						<div class="overlay-trigger" data-white="{{ media.data_white }}"></div>
+
+						{%- include components/ui.slide.arrows.liquid -%}
+						
+						{%- if media.type == "video" -%}
+						<video autoplay muted playsinline loop
+							style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+							<source src="{{ media.source.src | prepend: MEDIA_URL }}" type="video/mp4">
+						</video>
+						{%- elsif media.type == "image" -%}
+						<img {% unless forloop.first %}class="lazy swiper-lazy"{% endunless %} 
+							src="{{ LAZY_GIF }}" 
+							srcset="{{ media.source.data_srcset.low | prepend: MEDIA_URL | append: ' 600w' }},
+									{{ media.source.data_srcset.medium | prepend: MEDIA_URL | append: ' 1000w' }},
+									{{ media.source.data_srcset.high | prepend: MEDIA_URL | append: ' 2000w' }}" sizes="100vw"
+							alt="{{ media.filename }}"
+							style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+						{%- endif -%}
+					</div>
+				</div>
+				{%- endfor -%}
+
+			</div>
+		</div>
+	</div>
+</div>
+{%- assign mediaCounter = 0 -%}

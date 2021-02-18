@@ -1,0 +1,58 @@
+{
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": "{{ site.url }}/#organization",
+			"name": "{{ site.title }}",
+			"url": "{{ site.url }}/",
+			"sameAs": [{{ site.social.links | join:',' }}],
+			"logo": {
+				"@type": "ImageObject",
+				"@id": "{{ site.url }}/#logo",
+				"inLanguage": "{{ PAGE_LANG }}",
+				"url": "{{ site.url }}/wp-content/uploads/2020/05/logo.png",
+				"width": 228,
+				"height": 221,
+				"caption": "{{ site.title }}"
+			},
+			"image": { "@id": "{{ site.url }}/#logo" }
+		},
+		{
+			"@type": "WebSite",
+			"@id": "{{ site.url }}/#website",
+			"url": "{{ site.url }}/",
+			"name": "{{ site.title }}",
+			"description": "{{ PAGE_DESCRIPTION }}",
+			"publisher": {
+				"@id": "{{ site.url }}/#organization"
+			},
+			"potentialAction": [
+				{
+					"@type": "SearchAction",
+					"target": "{{ site.url }}/?s={search_term_string}",
+					"query-input": "required name=search_term_string"
+				}
+			],
+			"inLanguage": "{{ PAGE_LANG }}"
+		},
+		{
+			"@type": "WebPage",
+			"@id": "{{ PAGE_URL }}#webpage",
+			"url": "{{ PAGE_URL }}",
+			"name": "{{ PAGE_TITLE }}",
+			"isPartOf": { "@id": "{{ site.url }}/#website" },
+			{%- if page.type == "home" -%}"about": { "@id": "{{ site.url }}/#organization" },{% endif %}
+			"datePublished": "{{ PAGE_PUBDATE }}",
+			"dateModified": "{{ PAGE_MODIFIDATE }}",
+			"description": "{{ PAGE_DESCRIPTION }}",
+			"inLanguage": "{{ PAGE_LANG }}",
+			"potentialAction": [
+				{
+					"@type": "ReadAction",
+					"target": ["{{ PAGE_URL }}"]
+				}
+			]
+		}
+	]
+}

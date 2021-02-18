@@ -1,0 +1,29 @@
+<div class="slides-container">
+	<div class="slides-padding">
+		<div class="slides-inner">
+			<div class="slides">
+
+				{% for project in PROJECTS %}
+				{% include utils/global.liquid %}
+				<div class="slide hidden" data-uid="{{ project.title }}">
+					<a class="slide-inner {{ project.media[0].mode }}"
+						href="{{ project.title | prepend: page.url | prepend: site.url }}">
+						{% if project.media[0].type == 'image' %}
+						<img class="lazyload lazypreload" src="{{ LAZY_GIF }}"
+							data-src="{{ project.media[0].source.src | prepend: PR_MEDIA_URL }}" alt="1"
+							style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+						{% elsif project.media[0].type == 'video' %}
+						<video autoplay muted playsinline loop
+							style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+							<source src="{{ project.media[0].source.src | prepend: PR_MEDIA_URL }}" type="video/mp4">
+						</video>
+						{% endif %}
+
+					</a>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+</div>

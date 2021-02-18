@@ -1,0 +1,10 @@
+<header id="header" class="header {% if page.type == "home" %}desktop-hidden{% endif %}">
+	<nav id="menu" class="menu">
+		<ul>
+			{% include components/ui.logo.liquid %}
+			{% include components/ui.menu.liquid %}
+			{% include components/ui.languages.mobile.liquid %}
+			<li class="col-2 col-placeholder"></li>
+			{% include components/ui.languages.desktop.liquid %}
+	</nav>
+</header>

@@ -1,0 +1,77 @@
+{
+	"title": "Unknow, Unbranded",
+	"lang": "zh",
+	"description":"Unknown, Unbranded 是一家在北京成立的创意事务所, 您身边的数字化策略与产品专家。主要从事数字产品, 产品策略, 品牌, UI与空间方面的工作。以发掘业务的差异化价值为核心，为品牌创造“创新机遇”。",
+	"update": "2020-12-30T10:20:00Z",
+	"ui": {
+		"nav": [
+			{
+				"id": "work",
+				"title": "作品",
+				"route": "/work"
+			},
+			{
+				"id": "about",
+				"title": "关于我们",
+				"route": "/about"
+			},
+			{
+				"id": "index",
+				"title": "索引",
+				"route": "/index"
+			}
+		],
+		"table_header": {
+			"project": "项目",
+			"index": "N°",
+			"client": "客户",
+			"type": "类别",
+			"year": "年份",
+			"country": "国家",
+			"status": "完成状态"
+		},
+		"contact": "联络我们",
+		"copyright": "版权所有"
+	},
+	"info": {
+		"about": "<p>Unknown, Unbranded 是一家于 2020 年在北京成立的创意工作室, 专门提供产品设计, 数字策略, UI 以及空间设计等相关领域的设计服务。将来 Unknown, Unbranded 设想与来自各个领域的国际创作者远程合作，将摄影师，建筑师，多学科背景创作者，战略家，程序员，UX用户体验设计专家，手工艺人和各种媒介的艺术家聚集在一起。 Unknown, Unbranded 认为设计思维将不再有明显的界限, 产品从0到1, 都与科技脉动甚至是社会的变迁息息相关。Unknown,Unbranded 伴随客户从最初的构想直到最终的实践, 工作室的服务范围包含产品研发, 设计策略, 以及艺术指导。 Unknown, Unbranded 的设计理念来自对事物本质的分析与掌握,从而提出独到且谨慎的实践方案。 Unknown, Unbranded 在为 France, Japan 与 Netherlands 等国家的客户进行产品设计服务的同时, 也进行工作室的独立设计创作。</p>",
+		"contact": {
+			"email": "biz@uuoffice.cc",
+			"tel": {
+				"zone":"+86",
+				"number":"15.11.000.40.23"
+			},
+			"address": {
+				"detail": "Virtual Office<br>Work Remotely",
+				"location": ""
+			},
+			"social": [
+				{
+					"item": "instagram",
+					"title": "Instagram",
+					"link": ""
+				},
+				{
+					"item": "linkdedin",
+					"title": "LinkedIn",
+					"link": ""
+				},
+				{
+					"item": "github",
+					"title": "Github",
+					"link": "https://github.com/unknown-unbranded"
+				},
+				{
+					"item": "behance",
+					"title": "Behance",
+					"link": ""
+				},
+				{
+					"item": "skype",
+					"title": "Skype",
+					"link": "skype:live:.cid.e520d70ae7c90141?chat"
+				}
+			]
+		}
+	}
+}

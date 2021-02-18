@@ -1,0 +1,29 @@
+---
+#layout: compress
+---
+{%- include utils/global.liquid -%}
+{%- include utils/seo.liquid -%}
+{%- include utils/var.liquid -%}
+
+<!DOCTYPE html>
+<html lang="{{ PAGE_LANG }}">
+
+<head>
+	{% include main/head.liquid %}
+</head>
+<body class="fixed" data-barba="wrapper">
+	{% include module/header.liquid %}
+	{% include module/header.fixed.liquid %}
+	<div class="container" data-page="{{ page.page_type }}" data-barba="container" data-barba-namespace="{{ page.page_type }}">
+		<div id="overlay" class="overlay hidden">
+			<div class="media"></div>
+		</div>
+		<div id="cursor-container" class="cursor-container">
+			{% include components/ui.cursor.liquid %}
+		</div>
+		{% include pages/project/detail.content.liquid %}
+	</div>
+	{% include main/foot.liquid %}
+</body>
+
+</html>

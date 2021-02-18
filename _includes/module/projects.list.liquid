@@ -1,0 +1,46 @@
+{% include utils/global.liquid %}
+<div class="projects-list">
+	{% include components/projects.table.header.liquid %}
+
+	<ul class="projects-table">
+	{% for project in PROJECTS %}
+		{%- assign prIndex = forloop.index -%}
+		<li class="project-line">
+			{% include components/project.line.link.liquid %}
+		</li>
+	{% endfor %}
+	</ul>
+
+	{% include module/footer.liquid %}
+	
+	<div class="slides-container">
+		<div class="slides-padding">
+			<div class="slides-inner">
+				
+				<div class="slides">
+
+					{% for project in PROJECTS %}
+						{%- include utils/global.liquid -%}
+						<div class="slide hidden" data-uid="{{ project.title }}">
+							<a class="slide-inner portrait" href="{{ project.title | prepend: PROJECT_URL }}">
+								{% if project.media[0].type == "image" %}
+									<img class="lazyload lazypreload" src="{{ LAZY_GIF }}"
+										data-src="{{ project.media[0].source.data_src | prepend: MEDIA_URL }}" 
+										alt="{{ project.media[0].filename }}"
+										style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+									{% elsif project.media[0].type == "video" %}
+									<video autoplay muted playsinline loop style="object-fit: cover; object-position: 50% 50%;font-family: 'object-fit: cover; object-position: 50% 50%;'">
+										<source src="{{ project.media[0].source.src | prepend: MEDIA_URL }}" type="video/mp4">
+									</video>
+								{% endif %}
+							</a>
+						</div>
+					{% endfor %}
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

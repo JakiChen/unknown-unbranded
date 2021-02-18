@@ -1,0 +1,26 @@
+<li id="mobile-languages-trigger" class="mobile-only languages">{{ current_lang }}</li>
+<li id="mobile-languages-list" class="mobile-only languages-list hide">
+	<ul class="languages-list-inner">
+		{%- unless page.url contains '/en' -%}
+		<li class="language mobile-only">
+			<a class="mobile-language translate" href="{{ '/en/' | prepend: site.url | append: en_page }}"
+				data-code="en">English</a>
+		</li>
+		{%- endunless -%}
+		{%- unless page.url contains '/fr' -%}
+		<li class="language mobile-only">
+			<a class="mobile-language translate" href="{{ '/fr/' | prepend: site.url | append: fr_page }}"
+				data-code="fr">Français</a>
+		</li>
+		{%- endunless -%}
+		{%- unless page.url contains '/zh' or page.title =='首页' -%}
+		<li class="language mobile-only">
+			<a class="mobile-language translate" href="{{ '/zh/' | prepend: site.url | append: zh_page }}"
+				data-code="fr">中文</a>
+		</li>
+		{%- endunless -%}
+		<li class="language hide-languages-list mobile-only">
+			<div class="mobile-language">{{ current_lang }}</div>
+		</li>
+	</ul>
+</li>

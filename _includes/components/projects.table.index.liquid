@@ -1,0 +1,35 @@
+{% include utils/global.liquid %}
+<ul class="projects-table">
+	{% for project in PROJECTS %}
+		{%- assign prIndex = forloop.index -%}
+		<li class="project-line">
+
+			{% include components/project.line.link.liquid %}
+			
+			<div class="project-line-images" href="{{ project.title | prepend: PROJECT_URL }}">
+
+				{% for media in project.media %}
+				<a class="project-image {{ media.mode }}" href="{{ project.title | prepend: PROJECT_URL }}"
+					data-slide-init="{{ media.index }}">
+					<div class="image">
+						{% if media.type == 'image' %}
+						<img class="lazyload" src="{{ LAZY_GIF }}" 
+							data-src="{{ media.source.data_srcset.src | prepend: MEDIA_URL }}"
+							data-srcset="{{ media.source.data_srcset.low | prepend: MEDIA_URL | append: ' 600w' }}, 
+										{{ media.source.data_srcset.medium | prepend: MEDIA_URL | append: ' 1000w' }}, 
+										{{ media.source.data_srcset.high | prepend: MEDIA_URL | append: ' 2000w' }}"
+							data-sizes="auto"
+							alt="{{ media.filename }}">
+						{% elsif media.type == 'video' %}
+						<video autoplay muted playsinline loop>
+							<source src="{{ media.source.src | prepend: MEDIA_URL }}" type="video/mp4">
+						</video>
+						{% endif %}
+					</div>
+				</a>
+				{% endfor %}
+
+			</div>
+		</li>
+	{% endfor %}
+</ul>

@@ -1,0 +1,11 @@
+<li class="col-1 languages-desktop">
+	<span {% if page.url contains '/en' %}class="hidden" {% endif %}>
+		<a class="translate" href="{{ '/en/' | prepend: site.url | append: en_page }}" data-code="en">English</a>
+	</span>
+	<span {% if page.url contains '/fr' %}class="hidden" {% endif %}>
+		<a class="translate" href="{{ '/fr/' | prepend: site.url | append: fr_page }}" data-code="fr">Français</a>
+	</span>
+	<span {% if page.url contains '/zh' or page.title=='首页' %}class="hidden" {% endif %}>
+		<a class="translate" href="{{ '/zh/' | | prepend: site.url | append: zh_page }}" data-code="zh">中文</a>
+	</span>
+</li>

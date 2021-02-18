@@ -1,0 +1,51 @@
+{%- comment -%}配置不同语言页面路由{%- endcomment -%}
+{%- assign current_page = page.url | remove: '/en/' | remove: '/fr/' | remove: '/zh/' -%}
+{%- if current_page contains 'work' or current_page contains 'index' -%}
+	{%- assign en_page = current_page -%}
+	{%- assign zh_page = en_page -%}
+	{%- assign fr_page = current_page | replace: 'work', 'projets' -%}
+{%- elsif current_page contains 'projets' -%}
+	{%- assign en_page = current_page | replace: 'projets', 'work' -%}
+	{%- assign zh_page = en_page -%}
+	{%- assign fr_page = current_page -%}
+{%- elsif current_page contains 'about' -%}
+	{%- assign en_page = current_page -%}
+	{%- assign zh_page = en_page -%}
+	{%- assign fr_page = current_page | replace: 'about', 'a-propos' -%}
+{%- elsif current_page contains 'a-propos' -%}
+	{%- assign en_page = current_page | replace: 'a-propos', 'about' -%}
+	{%- assign zh_page = en_page -%}
+	{%- assign fr_page = current_page -%}
+{%- endif -%}
+{%- comment -%}设置当前语言{%- endcomment -%}
+{%- capture current_lang -%}
+	{%- if page.url contains '/en' -%}English{%- endif -%}
+	{%- if page.url contains '/fr' -%}Français{%- endif -%}
+	{%- if page.url contains '/zh' or page.title =='首页' -%}中文{%- endif -%}
+{%- endcapture -%}
+{%- comment -%} `prevProject` 与 `nextProject` 配置 {%- endcomment -%}
+{%- for project in PROJECTS -%}
+	{%- if project.title == page.title -%}
+		{%- assign currentIndex = forloop.index0 -%}
+		{%- assign prevIndex = currentIndex | minus: 1 -%}
+		{%- assign nextIndex = currentIndex | plus: 1 -%}
+		{%- assign projectIndexLength = forloop.length | minus: 1 -%}
+		{%- assign projectIndex = currentIndex | plus: 1 -%}
+	{%- endif -%}
+{%- endfor -%}
+{%- if currentIndex == 0 -%}
+		{%- assign prevProject = PROJECTS[projectIndexLength].title -%}
+		{%- assign nextProject = PROJECTS[nextIndex].title -%}
+		{%- assign prevIndexShow = projectIndexLength -%}
+		{%- assign nextIndexShow = nextIndex -%}
+	{%- elsif currentIndex < projectIndexLength and currentIndex != 0 -%}
+		{%- assign prevProject = PROJECTS[prevIndex].title -%}
+		{%- assign nextProject = PROJECTS[nextIndex].title -%}
+		{%- assign prevIndexShow = prevIndex -%}
+		{%- assign nextIndexShow = nextIndex -%}
+	{%- elsif currentIndex == projectIndexLength -%}
+		{%- assign prevProject = PROJECTS[prevIndex].title -%}
+		{%- assign nextProject = PROJECTS[0].title -%}
+		{%- assign prevIndexShow = prevIndex -%}
+		{%- assign nextIndexShow = 0 -%}
+{%- endif -%}

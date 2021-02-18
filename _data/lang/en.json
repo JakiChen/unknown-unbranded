@@ -1,0 +1,77 @@
+{
+	"title": "Unknow, Unbranded",
+	"lang": "en",
+	"description": "Unknown, Unbranded is a creative office established in Peking offering expertise in digital products and working mostly on product Strategy, Branding, UI and space.",
+	"update": "2020-12-30T10:20:00Z",
+	"ui": {
+		"nav": [
+			{
+				"id": "work",
+				"title": "Work",
+				"route": "/work"
+			},
+			{
+				"id": "about",
+				"title": "About",
+				"route": "/about"
+			},
+			{
+				"id": "index",
+				"title": "Index",
+				"route": "/index"
+			}
+		],
+		"table_header": {
+			"project": "Project",
+			"index": "N°",
+			"client": "Client",
+			"type": "Type",
+			"year": "Year",
+			"country": "Country",
+			"status": "Status"
+		},
+		"contact": "Contact us",
+		"copyright": "All rights reserved"
+	},
+	"info": {
+		"about": "<p>Unknown, Unbranded is a creative office established in 2020 in Peking offering expertise in digital products and spaces. In the future Unknown, Unbranded envision more collaborations with leading creative minds from multidisciplinary fields, such as photographers, UX designers, architects, content creators, strategists and tech people. Unknown, Unbranded loves playing with the tension in between form, object materiality and rational topics such as changes in societies or cutting edge technologies. Unknown, Unbranded works along with their clients from original intent until it reaches the end user, delivering a broad set of services in product development, design strategy and art direction. Unknown, Unbranded is built around a creative practice based on studying and understanding archetypes, resulting in singular discreet production. Unknown, Unbranded initiates projects on its own beside works for clients in different countries such as France, Japan and Netherlands.</p>",
+		"contact": {
+			"email": "biz@uuoffice.cc",
+			"tel": {
+				"zone":"+86",
+				"number":"15.11.000.40.23"
+			},
+			"address": {
+				"detail": "Virtual Office<br>Work Remotely",
+				"location": ""
+			},
+			"social": [
+				{
+					"item": "instagram",
+					"title": "Instagram",
+					"link": ""
+				},
+				{
+					"item": "linkdedin",
+					"title": "LinkedIn",
+					"link": ""
+				},
+				{
+					"item": "github",
+					"title": "Github",
+					"link": ""
+				},
+				{
+					"item": "behance",
+					"title": "Behance",
+					"link": ""
+				},
+				{
+					"item": "skype",
+					"title": "Skype",
+					"link": "skype:live:.cid.e520d70ae7c90141?chat"
+				}
+			]
+		}
+	}
+}

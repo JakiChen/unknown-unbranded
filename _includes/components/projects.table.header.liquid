@@ -1,0 +1,21 @@
+{%- assign tableHeader = TRANSLATE_LANG.ui.table_header -%}
+<div id="projects-header" class="projects-header secondary-header">
+	<div class="col-2 project-id" data-sort="id" data-dir="asc">
+		<span>{{ tableHeader.project }}</span><span class="arrow">&darr;</span>
+	</div>
+	<div class="col-2 project-index" data-sort="index" data-dir="asc">
+		<span>{{ tableHeader.index }}</span><span class="arrow">&darr;</span>
+	</div>
+	<div class="col-2 project-client color-portrait" data-sort="client" data-dir="asc">
+		<span>{{ tableHeader.client }}</span><span class="arrow">&darr;</span>
+	</div>
+	<div class="col-2 project-year color-portrait" data-sort="year" data-dir="asc">
+		<span>{{ tableHeader.year }}</span><span class="arrow">&darr;</span>
+	</div>
+	<div class="col-2 project-country" data-sort="country" data-dir="asc">
+		<span>{{ tableHeader.country }}</span><span class="arrow">&darr;</span>
+	</div>
+	<div class="col-1 project-status" data-sort="status" data-dir="asc">
+		<span>{{ tableHeader.status }}</span><span class="arrow">&darr;</span>
+	</div>
+</div>

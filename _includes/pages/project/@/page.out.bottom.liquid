@@ -1,0 +1,7 @@
+<div class="project-page out-bottom hidden">
+	{%- assign nextPage = PROJECTS | where: 'title', nextProject -%}
+	{%- assign prIndex = nextIndexShow | plus: 1 -%}
+	{%- for project in nextPage -%}
+		{% include module/project.template.liquid %}
+	{%- endfor -%}
+</div>

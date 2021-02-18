@@ -1,0 +1,12 @@
+{%- include utils/global.liquid -%}
+<footer>
+	<div class="contact col-2">
+		<a href="{{ TRANSLATE_LANG.info.contact.email | encode_email | prepend: " mailto:" }}">{{
+			TRANSLATE_LANG.ui.contact }}</a>
+	</div>
+	<div class="instagram col-2">
+		{% include components/ui.social.links.liquid %}
+	</div>
+	<div class="rights col-3">(C) UU, {{'now' | date: '%Y' | remove_first: '20' | prepend: '20 — '}} · {{
+		TRANSLATE_LANG.ui.copyright }}</div>
+</footer>

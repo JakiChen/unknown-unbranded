@@ -1,0 +1,31 @@
+{%- include utils/global.liquid -%}
+<div class="about">
+	<div class="about-left">
+		<div class="about-left-inner">
+			{{ TRANSLATE_LANG.info.about }}
+		</div>
+	</div>
+	<div class="about-right">
+		<p>
+			<a href="{{ TRANSLATE_LANG.info.contact.email | encode_email | prepend: " mailto:" }}">
+				{{ TRANSLATE_LANG.info.contact.email | html_encode_email | split: '&#64;' | join: "<br>&#64;" }}
+			</a>
+		</p>
+		<p>
+			{%- assign tel = TRANSLATE_LANG.info.contact.tel.number | remove: "." -%}
+			{%- assign visible_tel = TRANSLATE_LANG.info.contact.tel.number | split: "." -%}
+			{%- assign zone = TRANSLATE_LANG.info.contact.tel.zone -%}
+			<a href="{{ tel | prepend: zone | encode_email | prepend: 'tel:'}}">
+				{{ zone }}. (0)<br>{{ visible_tel[0] | html_encode_email }}.{{ visible_tel[1] | html_encode_email
+				}}.<span class="tel-hidden">{{ visible_tel[2] | html_encode_email }}.</span>{{ visible_tel[3] |
+				html_encode_email }}.{{ visible_tel[4] | html_encode_email }}
+			</a>
+		</p>
+		<p>
+			<a href="{{ TRANSLATE_LANG.info.contact.address.location }}" rel="noopener noreferrer" target="_blank">{{
+				TRANSLATE_LANG.info.contact.address.detail }}</a>
+			{%- assign about_wraper = 'about' -%}
+			{% include components/ui.social.links.liquid %}
+		</p>
+	</div>
+</div>

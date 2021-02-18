@@ -1,0 +1,16 @@
+{% for nav in TRANSLATE_LANG.ui.nav %}
+{%- capture isActive -%}
+	{%- if page.permalink contains nav.route -%}
+		{{ 'active' }}
+	{% elsif page.page_type == "project" %}
+		{%- if forloop.first -%}
+		{{ 'active' }}
+		{%- endif -%}
+	{%- endif -%}
+{%- endcapture -%}
+<li class="col-2 col-pages {{ isActive }}"
+	data-id="{{ nav.id }}">
+	<a href="{{ LANG_BASEURL | prepend: site.url | append: nav.route }}" data-id="{{ nav.id }}" {%- if forloop.first
+		-%}data-to="{{ nav.id }}" {%- endif -%}>{{ nav.title }}</a>
+</li>
+{% endfor %}

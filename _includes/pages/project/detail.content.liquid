@@ -1,0 +1,35 @@
+{%- include utils/global.liquid -%}
+{%- include utils/var.liquid -%}
+
+<div class="project-page out-top hidden">
+	{%- assign prevPage = PROJECTS | where: 'title', prevProject -%}
+	{%- assign prIndex = prevIndexShow | plus: 1 -%}
+	{%- for project in prevPage -%}
+	{% include module/project.template.liquid %}
+	{%- endfor -%}
+</div>
+
+<div class="project-page current-project-page">
+	{%- assign currentPage = PROJECTS | where: 'title', page.title -%}
+	{%- assign prIndex = projectIndex -%}
+	{%- for project in currentPage -%}
+	{% include module/project.template.liquid %}
+	{%- endfor -%}
+</div>
+
+<div class="mobile-arrows">
+	<div class="prev">
+		<a href="{{ prevProject | prepend: PROJECT_URL }}">&larr;</a>
+	</div>
+	<div class="next">
+		<a href="{{ nextProject | prepend: PROJECT_URL }}">&rarr;</a>
+	</div>
+</div>
+
+<div class="project-page out-bottom hidden">
+	{%- assign nextPage = PROJECTS | where: 'title', nextProject -%}
+	{%- assign prIndex = nextIndexShow | plus: 1 -%}
+	{%- for project in nextPage -%}
+	{% include module/project.template.liquid %}
+	{%- endfor -%}
+</div>

@@ -1,0 +1,4 @@
+<script src="{{ '/public/assets/dist/scripts.min.js?v=' | append: VERSION | relative_url }}"></script>
+{%- if page.type == "home" -%}
+	<script src="{{ '/public/assets/dist/soft-webgl.txt' | relative_url }}"></script>
+{%- endif -%}

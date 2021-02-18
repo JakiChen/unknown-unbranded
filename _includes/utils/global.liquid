@@ -1,0 +1,35 @@
+{%- comment -%} Site.Config {%- endcomment -%}
+{%- assign LAZY_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' -%}
+{%- assign BRAND_FNAME = site.author.name | split: ', ' | first -%}
+{%- assign BRAND_SNAME = site.author.name | split: ', ' | last -%}
+{%- assign MEDIA_URL = site.url | append: "/public/media/pages/work/" | append: project.title -%}
+{%- assign PR_INDEX = page.pr_index -%}
+{%- assign VERSION = "now" | date: "%Y%m%d%H%M" | remove: '20' -%}
+
+{%- comment -%}根据语言环境加载所需的界面数据{%- endcomment -%}
+{%- if page.url contains '/zh' -%}
+		{%- assign TRANSLATE_LANG = site.data.lang.zh -%}
+		{%- assign PROJECTS = site.data.projects.zh -%}
+		{%- assign PAGE_LANG = 'zh-CN' -%}
+		{%- assign PROJECT_URL = site.url | append: '/zh/work/' -%}
+	{%- elsif page.url contains '/en' -%}
+		{%- assign TRANSLATE_LANG = site.data.lang.en -%}
+		{% assign PROJECTS = site.data.projects.en %}
+		{%- assign PAGE_LANG = 'en-GB' -%}
+		{%- assign PROJECT_URL = site.url | append: '/en/work/' -%}
+	{%- elsif page.url contains '/fr' -%}
+		{%- assign TRANSLATE_LANG = site.data.lang.fr -%}
+		{%- assign PROJECTS = site.data.projects.fr -%}
+		{%- assign PAGE_LANG = 'fr-FR' -%}
+		{%- assign PROJECT_URL = site.url | append: '/fr/projets/' -%}
+	{%- else -%}
+		{%- assign TRANSLATE_LANG = site.data.lang.zh -%}
+		{%- assign PROJECTS = site.data.projects.zh -%}
+		{%- assign PAGE_LANG = 'zh-CN' -%}
+		{%- assign PROJECT_URL = site.url | append: '/zh/work/' -%}
+{%- endif -%}
+{%- comment -%}设置当前语言环境下的基地址{%- endcomment -%}
+{%- capture LANG_BASEURL -%}
+	{%- assign LANG_BASEURL = "/en" -%}
+	{%- if page.url contains '/zh' -%}/zh{%- elsif page.url contains '/fr' -%}/fr{%- elsif page.url contains '/en' -%}/en{% else %}/zh{%- endif -%}
+{%- endcapture-%}

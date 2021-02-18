@@ -1,0 +1,26 @@
+---
+layout: compress
+---
+{%- include utils/global.liquid -%}
+{%- include utils/seo.liquid -%}
+{%- include utils/var.liquid -%}
+<!DOCTYPE html>
+<html lang="{{ PAGE_LANG }}">
+<head>
+	{%- include main/head.liquid -%}
+</head>
+<body data-barba="wrapper">
+	{%- if page.type == "home" -%}
+		{%- include pages/home/introl.liquid -%}
+	{%- endif -%}
+	{%- include module/header.liquid -%}
+	{%- include module/header.fixed.liquid -%}
+	<div class="container hidden" data-page="{{ page.type }}" data-barba="container" data-barba-namespace="{{ page.type }}">
+	{%- if page.type == "home" -%}
+		{%- include pages/home/mobile.inner.liquid -%}
+	{%- endif -%}
+		{{ content }}
+	</div>
+	{%- include main/foot.liquid -%}
+</body>
+</html>

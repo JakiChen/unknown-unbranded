@@ -1,0 +1,27 @@
+<section id="home-intro-bg" class="home-intro-bg cursor-down">
+    <div class="canvas w-embed">
+        <canvas style="background: transparent;"></canvas>
+    </div>
+</section>
+<section id="home-intro" class="home-intro">
+    <h1>
+        <span class="desktop-hidden">{{ BRAND_FNAME }},</span>
+        <span class="desktop-hidden">{{ BRAND_SNAME }}</span>
+    </h1>
+    <div class="infos">
+        <p class="desktop-hidden">website,</p>
+        <p class="desktop-hidden">
+            <span id="width">0</span> <span class="cross">&times;</span> <span id="height">0</span> px,
+        </p>
+        <p class="desktop-hidden">
+            <span id="date"><span id="year"></span>.<span id="month"></span>.<span id="day"></span></span>,
+        </p>
+        <p class="desktop-hidden">
+            <span id="clock"><span id="hours"></span>:<span id="minutes"></span></span>
+        </p>
+        <p class="desktop-hidden" id="location">
+            <span>{{ site.author.location[0] }}</span>, <span class="desktop-hidden">{{ site.author.location[1] }}</span>
+        </p>
+    </div>
+    <figure id="overlay" style="display:block" class="touch"></figure>
+</section>

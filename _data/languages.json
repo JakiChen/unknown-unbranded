@@ -1,0 +1,35 @@
+[
+	{
+		"id": "English",
+		"title": "English",
+		"route": "/fr",
+		"status":[
+			"En cours",
+			"Confidentiel",
+			"Publié",
+			"Auto-Initié"
+		]
+	},
+	{
+		"id": "france",
+		"title": "Français",
+		"route": "/en",
+		"status": [
+			"In progress",
+			"Confidential",
+			"Released",
+			"Self-Initiated"
+		]
+	},
+	{
+		"id": "chinese",
+		"title": "中文",
+		"route": "/zh",
+		"status": [
+			"正在进行",
+			"保密项目",
+			"公开发表",
+			"自筹项目"
+		]
+	}
+]

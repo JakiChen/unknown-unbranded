@@ -1,0 +1,7 @@
+<div class="project-page current-project-page">
+	{%- assign currentPage = PROJECTS | where: 'title', page.title -%}
+	{%- assign prIndex = projectIndex -%}
+	{%- for project in currentPage -%}
+		{% include module/project.template.liquid %}
+	{%- endfor -%}
+</div>

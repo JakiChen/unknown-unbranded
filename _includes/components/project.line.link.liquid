@@ -1,0 +1,56 @@
+{%-include utils/global.liquid -%}
+{%- for media in project.media -%}
+	{%- assign mediaCounter = mediaCounter | plus: 1 -%}
+{%- endfor -%}
+{%- if prIndex < 10 -%}
+		{%- assign project_index = prIndex | prepend: '0' -%}
+	{%- else -%}
+		{%- assign project_index = prIndex -%}
+{%- endif -%}
+<a class="project-line-link placeholder-shown" href="{{ project.title | prepend: PROJECT_URL }}" data-uid="{{ project.title }}">
+	<div class="col-2 project-id" data-sort="id" data-value="{{ project.project }}">
+		<div class="resizable">
+			{% include components/ui.brand.logo.liquid %}
+			<div class="id">{{ project.project }}</div>
+		</div>
+	</div>
+	<div class="mobile-only project-only index">
+		<span class="current">1</span> – {{ mediaCounter }}
+	</div>
+	<div class="col-2 project-index color-landscape" data-sort="index" data-value="{{ project_index }}">
+		<span class="resizable">{{ project_index }}</span>
+	</div>
+	{%- assign color_on_hover = project.page_color | append: '-on-hover' %}
+	<div class="col-2 project-client color-portrait {{ color_on_hover }}" data-sort="client"
+		data-value="{{ project.client }}">
+		<h3 class="resizable">{{ project.client }}</h3>
+	</div>
+	<div class="col-2 project-year color-portrait {{ color_on_hover }}" data-sort="year" data-value="{{ project.year }}">
+		<span class="resizable">{{ project.year }}</span>
+	</div>
+	<div class="col-2 project-country color-landscape" data-sort="country" data-value="{{ project.country }}">
+		<span class="resizable">{{ project.country }}</span>
+	</div>
+	<div class="col-1 project-status" data-sort="status" data-value="{{ project.status }}">
+		<span class="resizable">{{ project.status }}</span>
+	</div>
+
+	<div class="mobile-only mobile-cover">
+		<div class="image">
+			{% if project.media[0].type == "image" %}
+			<img class="lazyload" src="{{ LAZY_GIF }}" 
+				data-src="{{ project.media[0].source.data_src | prepend: MEDIA_URL }}"
+				data-srcset="{{ project.media[0].source.data_srcset.low | prepend: MEDIA_URL | append: ' 600w' }}, 
+							{{ project.media[0].source.data_srcset.medium | prepend: MEDIA_URL | append: ' 1000w' }}, 
+							{{ project.media[0].source.data_srcset.high | prepend: MEDIA_URL | append: ' 2000w' }}" 
+				data-sizes="auto"
+				alt="{{ project.media[0].filename }}">
+			{% else if project.media[0].type == "video" %}
+			<video autoplay muted playsinline loop>
+				<source src="{{ project.media[0].source.src | prepend: MEDIA_URL }}" type="video/mp4">
+			</video>
+			{% endif %}
+		</div>
+	</div>
+</a>
+{%- assign mediaCounter = 0 -%}
