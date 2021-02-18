@@ -40,7 +40,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Blog
 blog:
-    google_analytics: "UA-166822615-2"
+    google_analytics: "UA-166822615"
     last_modified_at: 2020-12-30 12:30:23
 
 # Jekyll datapage gennerator
